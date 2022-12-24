@@ -5,12 +5,12 @@ def main():
     #screen setup
     screen=t.Screen()
     screen.title('U.S.States Quiz')
-    image='.\\projects\\us-states-game-start\\blank_states_img.gif'
+    image='blank_states_img.gif'
     screen.addshape(image)
     t.shape(image)
 
     #reading csv
-    data=pd.read_csv('.\\projects\\us-states-game-start\\50_states.csv')
+    data=pd.read_csv('50_states.csv')
     states=data.state.to_list()
 
     guessed_states=[]
@@ -34,7 +34,7 @@ def main():
             missing_states=[i for i in states if i not in guessed_states]
 
             new_data=pd.DataFrame(missing_states)
-            new_data.to_csv('.\\projects\\us-states-game-start\\missing_states.csv')
+            new_data.to_csv('missing_states.csv')
             break
 
 
